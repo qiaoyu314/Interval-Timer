@@ -70,6 +70,7 @@
 		A47C854818825C65008AB488 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		A47C854A18825DFB008AB488 /* Timer+TimerWithHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Timer+TimerWithHelper.h"; sourceTree = "<group>"; };
 		A47C854B18825DFB008AB488 /* Timer+TimerWithHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Timer+TimerWithHelper.m"; sourceTree = "<group>"; };
+		A48EEF9A18C38613002541EA /* 120-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120-120.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		A417F0CB1867DFB000BE10CE = {
 			isa = PBXGroup;
 			children = (
+				A48EEF9A18C38613002541EA /* 120-120.png */,
 				A417F0DD1867DFB000BE10CE /* Interval Timer */,
 				A417F0F61867DFB000BE10CE /* Interval TimerTests */,
 				A417F0D61867DFB000BE10CE /* Frameworks */,
@@ -249,7 +251,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = YQ;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Yu Qiao";
 				TargetAttributes = {
 					A417F0EE1867DFB000BE10CE = {
@@ -355,7 +357,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -394,7 +395,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -452,7 +452,6 @@
 		A417F1041867DFB000BE10CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Interval Timer.app/Interval Timer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -475,7 +474,6 @@
 		A417F1051867DFB000BE10CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Interval Timer.app/Interval Timer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

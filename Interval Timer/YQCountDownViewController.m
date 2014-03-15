@@ -8,6 +8,7 @@
 
 #import "YQCountDownViewController.h"
 #import "Timer+TimerWithHelper.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface YQCountDownViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *reminingTimeLabel;
@@ -15,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIView *timerView;
 @property (weak, nonatomic) IBOutlet UILabel *totalReminingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalEscapingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *reminingCycleLabel;
+
+@property(nonatomic, weak)IBOutlet UIButton *pauseButton;
+@property(nonatomic, weak)IBOutlet UIButton *cancleButton;
 
 @property(nonatomic, weak) NSTimer *countDowntTimer;
 @property(nonatomic)int currentReminingTime;
@@ -22,13 +27,19 @@
 @property(nonatomic)timerState currentState;
 @property(nonatomic)NSInteger reminingCycle;
 
-@property(nonatomic, weak)IBOutlet UIButton *pauseButton;
-@property(nonatomic, weak)IBOutlet UIButton *restartButton;
+
+
 @end
 
 @implementation YQCountDownViewController
 
+//some global variables
 int totalTime;
+UIColor *myYellow;
+UIColor *myGrey;
+NSInteger totalCycleString;
+CFURLRef *soundURL;
+SystemSoundID   soundID;
 
 -(void)setCurrentReminingTime:(int)currentReminingTime
 {
@@ -43,6 +54,7 @@ int totalTime;
     
 }
 
+#pragma mark - setter
 -(void)setTotoalReminingTime:(int)totoalReminingTime
 {
     _totoalReminingTime = totoalReminingTime;
@@ -54,37 +66,50 @@ int totalTime;
 -(void)setCurrentState:(timerState)currentState
 {
     _currentState = currentState;
-    switch (currentState) {
-        case TIMER_WARM_UP:
-            self.currentStateLabel.text = @"Warm Up";
-            break;
-        case TIMER_ROUND:
-            self.currentStateLabel.text = @"Round";
-            break;
-        case TIMER_REST:
-            self.currentStateLabel.text = @"Rest";
-            break;
-        case TIMER_COOL_DOWN:
-            self.currentStateLabel.text = @"Cool Down";
-            break;
-        case TIMER_END:
-            self.currentStateLabel.text = @"End";
-        default:
-            break;
-    }
+    self.currentStateLabel.text = [self convertTimerStateToString:currentState];
 }
 
+-(void)setReminingCycle:(NSInteger)reminingCycle
+{
+    _reminingCycle = reminingCycle;
+    if (!totalCycleString) {
+        totalCycleString = [self.timer.cycle integerValue];
+    }
+    self.reminingCycleLabel.text = [NSString stringWithFormat:@"%ld/%ld",reminingCycle,totalCycleString];
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     
-	// Do any additional setup after loading the view.
-    
-    [self timerSetup];
-    
+    //set button shape and color
+    self.pauseButton.layer.cornerRadius = 40.0f;
+    self.pauseButton.layer.borderWidth = 1.5;
+    self.pauseButton.layer.borderColor = [UIColor greenColor].CGColor;
+    [self.pauseButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    self.cancleButton.layer.cornerRadius =40.0f;
+    self.cancleButton.layer.borderWidth = 1.5;
+    if (!myYellow) {
+        myYellow = [UIColor colorWithRed:255/255.0f green:215/255.0f blue:0/255.0f alpha:1];
+    }
+    if (!myGrey) {
+        myGrey = [UIColor colorWithRed:238/255.0f green:230/255.0f blue:221/255.0f alpha:1];
+    }
+    //disable cancle button
+    [self.cancleButton setEnabled:NO];
+    self.cancleButton.layer.borderColor = myGrey.CGColor;
+    [self.cancleButton setTitleColor:myGrey forState:UIControlStateNormal];
+    //create system sound
+    //NSURL *fileURL = [NSURL URLWithString:@"/System/Library/Audio/UISounds/Modern/sms_alert_popcorn.caf"];
+    //AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)fileURL,&soundID);
+    //set up timer
+    [self setupTimer];
+    //dispaly
     [[UIApplication sharedApplication ] setIdleTimerDisabled:YES] ;
+    
+    
     
 }
 
@@ -102,8 +127,10 @@ int totalTime;
     if (reminingTime == 0) {
         //cancel the timer;
         [self.countDowntTimer invalidate];
+        //play sound
+        AudioServicesPlaySystemSound(1005);
         //start next stage
-        self.currentState = [self nextState];
+        self.currentState = [self goToNextState];
         if (self.currentState != TIMER_END) {
             self.countDowntTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
         }else{
@@ -113,7 +140,7 @@ int totalTime;
     }
 }
 
--(void)timerSetup
+-(void)setupTimer
 {
     totalTime = [self.timer.getTotal intValue];
     self.totoalReminingTime = totalTime;
@@ -126,10 +153,81 @@ int totalTime;
         self.currentReminingTime = [self.timer.warmUpLength intValue];
     }
     self.reminingCycle = [self.timer.cycle integerValue];
+    
+}
+-(void)startTimer
+{
     self.countDowntTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
 }
 
--(timerState)nextState
+#pragma mark - some helper
+
+//conver timerState to string
+-(NSString *)convertTimerStateToString:(timerState)state
+{
+    NSString *result;
+    switch (state) {
+        case TIMER_WARM_UP:
+            result = [NSString stringWithFormat:@"WARM UP"];
+            break;
+        case TIMER_ROUND:
+            result = [NSString stringWithFormat:@"ROUND"];
+            break;
+        case TIMER_REST:
+            result = [NSString stringWithFormat:@"REST"];
+            break;
+        case TIMER_COOL_DOWN:
+            result = [NSString stringWithFormat:@"COOL DOWN"];
+            break;
+        case TIMER_END:
+            result = [NSString stringWithFormat:@"END"];
+        default:
+            result = [NSString stringWithFormat:@"END"];
+            break;
+    }
+    return result;
+}
+
+//get next state. will not set any other properties
+-(timerState)getNextState:(timerState)state
+{
+    timerState returnState;
+    switch (self.currentState) {
+        case TIMER_WARM_UP:
+            returnState = TIMER_ROUND;
+            break;
+        case TIMER_ROUND:
+            //if it's the last cycle, go to cool down
+            if (self.reminingCycle == 1) {
+                self.reminingCycle --;
+                if ([self.timer.cooldownLength intValue] > 0) {
+                    returnState = TIMER_COOL_DOWN;
+                }else{
+                    returnState = TIMER_END;
+                }
+            }else{
+                if ([self.timer.restLength intValue] > 0) {
+                    returnState = TIMER_REST;
+                }
+                else{
+                    //rest is not set
+                    returnState = TIMER_ROUND;
+                }
+            }
+            break;
+        case TIMER_REST:
+            self.currentReminingTime = [self.timer.roundLength intValue];
+            returnState = TIMER_ROUND;
+            break;
+        default:
+            returnState = TIMER_END;
+            break;
+    }
+    return returnState;
+}
+
+//set next state to current state. will set reminingCycle
+-(timerState)goToNextState
 {
     switch (self.currentState) {
         case TIMER_WARM_UP:
@@ -172,25 +270,53 @@ int totalTime;
     }
 }
 
-
-- (IBAction)pauseTimer
+#pragma mark - pause and restart timer
+- (IBAction)startAndPauseTimer
 {
-    if ([self.pauseButton.titleLabel.text isEqualToString:@"Pause"]) {
+    if ([self.pauseButton.titleLabel.text isEqualToString:@"Start"]) {
+        //start timer
+        [self startTimer];
+        //chage title and color
+        [self.pauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+        self.pauseButton.layer.borderColor = [UIColor redColor].CGColor;
+        [self.pauseButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        //enable cancle button
+        [self.cancleButton setEnabled:YES];
+        self.cancleButton.layer.borderColor = [UIColor blackColor].CGColor;
+        [self.cancleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
+    }
+    else if ([self.pauseButton.titleLabel.text isEqualToString:@"Pause"]) {
         [self.countDowntTimer invalidate];
         [self.pauseButton setTitle:@"Resume" forState:UIControlStateNormal];
+        self.pauseButton.layer.borderColor = [UIColor greenColor].CGColor;
+        [self.pauseButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     }else{
         [self.pauseButton setTitle:@"Pause" forState:UIControlStateNormal];
         self.countDowntTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        self.pauseButton.layer.borderColor = [UIColor redColor].CGColor;
+        [self.pauseButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }
     
     
 }
 
 
-- (IBAction)restartTimer {
+- (IBAction)cancleTimer {
     [self.countDowntTimer invalidate];
-    [self timerSetup];
-    [self.pauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+    [self setupTimer];
+    //set up start button
+    [self.pauseButton setTitle:@"Start" forState:UIControlStateNormal];
+    self.pauseButton.layer.borderColor = [UIColor greenColor].CGColor;
+    [self.pauseButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    //disable cancle button
+    [self.cancleButton setEnabled:NO];
+    self.cancleButton.layer.borderColor = myGrey.CGColor;
+    [self.cancleButton setTitleColor:myGrey forState:UIControlStateNormal];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self cancleTimer];
 }
 
 
