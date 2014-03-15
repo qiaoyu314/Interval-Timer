@@ -74,7 +74,7 @@
     if ([timer.name length]) {
         cell.textLabel.text = timer.name;
     }else{
-        cell.textLabel.text = @"\"Please name this timer\"";
+        cell.textLabel.text = @"Timer";
     }
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Round: %@. Cycle: %@",[Timer getLengthInString:timer.roundLength],[timer.cycle stringValue]];
     return cell;

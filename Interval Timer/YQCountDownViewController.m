@@ -75,7 +75,7 @@ SystemSoundID   soundID;
     if (!totalCycleString) {
         totalCycleString = [self.timer.cycle integerValue];
     }
-    self.reminingCycleLabel.text = [NSString stringWithFormat:@"%ld/%ld",reminingCycle,totalCycleString];
+    self.reminingCycleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)reminingCycle,(long)totalCycleString];
     
 }
 
