@@ -85,6 +85,17 @@ SystemSoundID   soundID;
     
     
     //set button shape and color
+    [self setUpButtons];
+    //set up timer
+    [self setupTimer];
+    
+    
+    
+    
+}
+
+-(void)setUpButtons
+{
     self.pauseButton.layer.cornerRadius = 40.0f;
     self.pauseButton.layer.borderWidth = 1.5;
     self.pauseButton.layer.borderColor = [UIColor greenColor].CGColor;
@@ -101,16 +112,7 @@ SystemSoundID   soundID;
     [self.cancleButton setEnabled:NO];
     self.cancleButton.layer.borderColor = myGrey.CGColor;
     [self.cancleButton setTitleColor:myGrey forState:UIControlStateNormal];
-    //create system sound
-    //NSURL *fileURL = [NSURL URLWithString:@"/System/Library/Audio/UISounds/Modern/sms_alert_popcorn.caf"];
-    //AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)fileURL,&soundID);
-    //set up timer
-    [self setupTimer];
-    //dispaly
-    [[UIApplication sharedApplication ] setIdleTimerDisabled:YES] ;
-    
-    
-    
+
 }
 
 
@@ -134,7 +136,12 @@ SystemSoundID   soundID;
         if (self.currentState != TIMER_END) {
             self.countDowntTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
         }else{
-            //end
+            //timer ends
+            //dispaly
+            [[UIApplication sharedApplication ] setIdleTimerDisabled:NO] ;
+            [self.pauseButton setEnabled:false];
+            self.pauseButton.layer.borderColor = myGrey.CGColor;
+            [self.pauseButton setTitleColor:myGrey forState:UIControlStateNormal];
             self.timerView.backgroundColor = [UIColor blackColor];
         }
     }
@@ -153,6 +160,8 @@ SystemSoundID   soundID;
         self.currentReminingTime = [self.timer.warmUpLength intValue];
     }
     self.reminingCycle = [self.timer.cycle integerValue];
+    //dispaly
+    [[UIApplication sharedApplication ] setIdleTimerDisabled:YES];
     
 }
 -(void)startTimer
@@ -306,6 +315,7 @@ SystemSoundID   soundID;
     [self.countDowntTimer invalidate];
     [self setupTimer];
     //set up start button
+    [self.pauseButton setEnabled:true];
     [self.pauseButton setTitle:@"Start" forState:UIControlStateNormal];
     self.pauseButton.layer.borderColor = [UIColor greenColor].CGColor;
     [self.pauseButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
