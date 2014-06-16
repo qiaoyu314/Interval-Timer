@@ -22,7 +22,6 @@
 		A417F1071867E01200BE10CE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A417F1061867E01200BE10CE /* Storyboard.storyboard */; };
 		A417F10F1867E48F00BE10CE /* YQTimerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A417F10E1867E48F00BE10CE /* YQTimerListViewController.m */; };
 		A44FBEBF186BDDB20056D270 /* YQEditTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44FBEBE186BDDB20056D270 /* YQEditTimerViewController.m */; };
-		A4786FEA18D3EE1300E1F5EA /* Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = A4786FE918D3EE1300E1F5EA /* Launch.png */; };
 		A47A09791888B08F00F743A8 /* YQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47A09781888B08F00F743A8 /* YQNavigationController.m */; };
 		A47C8531187E3E18008AB488 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A47C852F187E3E18008AB488 /* Model.xcdatamodeld */; };
 		A47C85461882439C008AB488 /* YQCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C85451882439C008AB488 /* YQCountDownViewController.m */; };
@@ -41,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A417F0D41867DFB000BE10CE /* Interval Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A417F0D41867DFB000BE10CE /* Fitting Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitting Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A417F0D71867DFB000BE10CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A417F0D91867DFB000BE10CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A417F0DB1867DFB000BE10CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -62,7 +61,6 @@
 		A417F10E1867E48F00BE10CE /* YQTimerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTimerListViewController.m; sourceTree = "<group>"; };
 		A44FBEBD186BDDB20056D270 /* YQEditTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQEditTimerViewController.h; sourceTree = "<group>"; };
 		A44FBEBE186BDDB20056D270 /* YQEditTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQEditTimerViewController.m; sourceTree = "<group>"; };
-		A4786FE918D3EE1300E1F5EA /* Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch.png; sourceTree = "<group>"; };
 		A47A09771888B08F00F743A8 /* YQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNavigationController.h; sourceTree = "<group>"; };
 		A47A09781888B08F00F743A8 /* YQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNavigationController.m; sourceTree = "<group>"; };
 		A47C8530187E3E18008AB488 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 		A47C854818825C65008AB488 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		A47C854A18825DFB008AB488 /* Timer+TimerWithHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Timer+TimerWithHelper.h"; sourceTree = "<group>"; };
 		A47C854B18825DFB008AB488 /* Timer+TimerWithHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Timer+TimerWithHelper.m"; sourceTree = "<group>"; };
-		A48EEF9A18C38613002541EA /* 120-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120-120.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +99,6 @@
 		A417F0CB1867DFB000BE10CE = {
 			isa = PBXGroup;
 			children = (
-				A4786FE918D3EE1300E1F5EA /* Launch.png */,
-				A48EEF9A18C38613002541EA /* 120-120.png */,
 				A417F0DD1867DFB000BE10CE /* Interval Timer */,
 				A417F0F61867DFB000BE10CE /* Interval TimerTests */,
 				A417F0D61867DFB000BE10CE /* Frameworks */,
@@ -114,7 +109,7 @@
 		A417F0D51867DFB000BE10CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A417F0D41867DFB000BE10CE /* Interval Timer.app */,
+				A417F0D41867DFB000BE10CE /* Fitting Timer.app */,
 				A417F0EF1867DFB000BE10CE /* Interval TimerTests.xctest */,
 			);
 			name = Products;
@@ -226,7 +221,7 @@
 			);
 			name = "Interval Timer";
 			productName = "Interval Timer";
-			productReference = A417F0D41867DFB000BE10CE /* Interval Timer.app */;
+			productReference = A417F0D41867DFB000BE10CE /* Fitting Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A417F0EE1867DFB000BE10CE /* Interval TimerTests */ = {
@@ -288,7 +283,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4786FEA18D3EE1300E1F5EA /* Launch.png in Resources */,
 				A417F0E21867DFB000BE10CE /* InfoPlist.strings in Resources */,
 				A417F0EA1867DFB000BE10CE /* Images.xcassets in Resources */,
 				A417F1071867E01200BE10CE /* Storyboard.storyboard in Resources */,
@@ -441,7 +435,7 @@
 				GCC_PREFIX_HEADER = "Interval Timer/Interval Timer-Prefix.pch";
 				INFOPLIST_FILE = "Interval Timer/Interval Timer-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "Fitting Timer";
+				PRODUCT_NAME = "Interval Timer";
 				SDKROOT = iphoneos7.1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -457,7 +451,7 @@
 				GCC_PREFIX_HEADER = "Interval Timer/Interval Timer-Prefix.pch";
 				INFOPLIST_FILE = "Interval Timer/Interval Timer-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "Fitting Timer";
+				PRODUCT_NAME = "Interval Timer";
 				SDKROOT = iphoneos7.1;
 				WRAPPER_EXTENSION = app;
 			};

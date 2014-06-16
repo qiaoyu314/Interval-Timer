@@ -9,6 +9,7 @@
 #import "YQEditTimerViewController.h"
 #import "YQCountDownViewController.h"
 
+#define PICKER_ROW 0
 #define WARM_UP_ROW 0
 #define ROUND_ROW 1
 #define REST_ROW 2
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *roundLengthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *restLengthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *coolDownLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentEditingLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cycleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property NSMutableArray *timePickDataArray;   //contains 3 arrays.
@@ -120,9 +122,35 @@
     if (indexPath.section == 1) {
         if(selectedRow <= COOL_DOWN_ROW){
             self.showTimePicker = YES;
+            //auto scroll to the picker
+            NSIndexPath *pickerIndex = [NSIndexPath indexPathForRow:PICKER_ROW inSection:0];
+            [self.tableView scrollToRowAtIndexPath:pickerIndex atScrollPosition:UITableViewScrollPositionTop animated:true];
         }else{
             self.showTimePicker = NO;
         }
+        
+        //set the title above the picker
+        //get the title
+        NSString *currentTitle;
+        switch (selectedRow) {
+            case WARM_UP_ROW:
+                currentTitle = [NSString stringWithFormat:@"WARM UP"];
+                break;
+            case ROUND_ROW:
+                currentTitle = [NSString stringWithFormat:@"ROUND"];
+                break;
+            case REST_ROW:
+                currentTitle = [NSString stringWithFormat:@"REST"];
+                break;
+            case COOL_DOWN_ROW:
+                currentTitle = [NSString stringWithFormat:@"COOL DOWN"];
+                break;
+            default:
+                currentTitle = [NSString stringWithFormat:@""];
+                break;
+        }
+        self.currentEditingLabel.text = [NSString stringWithFormat:@"Set the %@ time",currentTitle];
+        
         //update time picker to match the selected row;
         if (lastSelectedRow != selectedRow) {
             [self udpateTimePicker:selectedRow];
