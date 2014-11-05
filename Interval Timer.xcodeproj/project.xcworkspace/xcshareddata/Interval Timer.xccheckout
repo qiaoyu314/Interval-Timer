@@ -10,22 +10,30 @@
 	<string>Interval Timer</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>38D9009B322140394B9DA7467F68950B56B35FF5</key>
+		<string>https://github.com/daltoniam/SwiftHTTP.git</string>
+		<key>AA37E835F1E6EDDD6CF9A7BAFE53C3BB84C548BD</key>
+		<string>https://github.com/qiaoyu314/Interval-Timer.git</string>
 		<key>DA41B5D9-42D2-4EC3-BB17-FAFFD87F2463</key>
 		<string>https://github.com/qiaoyu314/Interval-Timer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Interval Timer.xcodeproj/project.xcworkspace</string>
+	<string>Interval Timer.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DA41B5D9-42D2-4EC3-BB17-FAFFD87F2463</key>
+		<key>38D9009B322140394B9DA7467F68950B56B35FF5</key>
+		<string>../../../SwiftHTTP</string>
+		<key>AA37E835F1E6EDDD6CF9A7BAFE53C3BB84C548BD</key>
 		<string>../..</string>
+		<key>DA41B5D9-42D2-4EC3-BB17-FAFFD87F2463</key>
+		<string>../../../Interval Timer</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/qiaoyu314/Interval-Timer.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DA41B5D9-42D2-4EC3-BB17-FAFFD87F2463</string>
+	<string>AA37E835F1E6EDDD6CF9A7BAFE53C3BB84C548BD</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +43,22 @@
 			<string>DA41B5D9-42D2-4EC3-BB17-FAFFD87F2463</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Interval Timer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AA37E835F1E6EDDD6CF9A7BAFE53C3BB84C548BD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Interval%20Timer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38D9009B322140394B9DA7467F68950B56B35FF5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftHTTP</string>
 		</dict>
 	</array>
 </dict>

@@ -9,6 +9,7 @@
 #import "YQTimerListViewController.h"
 #import "YQEditTimerViewController.h"
 #import "Timer+TimerWithHelper.h"
+#import <fittingTimer-Swift.h>
 
 @interface YQTimerListViewController ()
 {
@@ -36,7 +37,9 @@
     NSError *error;
     if (![self.fetchedController performFetch:&error]) {
         //handle error here
-        
+        if(error){
+            
+        }
     }
 }
 
@@ -101,6 +104,7 @@
 {
     if (!_fetchedController) {
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        
         NSEntityDescription *entiry = [NSEntityDescription entityForName:@"Timer"
                                                   inManagedObjectContext:self.managedObjectContext];
         [request setEntity:entiry];
@@ -138,10 +142,10 @@
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
             
-//        case NSFetchedResultsChangeUpdate:
+        case NSFetchedResultsChangeUpdate:
 //            [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
 //                    atIndexPath:indexPath];
-//            break;
+            break;
             
         case NSFetchedResultsChangeMove:
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
@@ -190,7 +194,9 @@
     [self.tableView reloadData];
 }
 
-
+- (IBAction)toggleMenu:(id)sender {
+    [self toggleSideMenuView];
+}
 
 
 /*

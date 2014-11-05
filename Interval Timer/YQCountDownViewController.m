@@ -26,6 +26,7 @@
 @property(nonatomic)int totoalReminingTime;
 @property(nonatomic)timerState currentState;
 @property(nonatomic)NSInteger reminingCycle;
+@property(nonatomic)BOOL firstTime;
 
 
 
@@ -72,8 +73,9 @@ SystemSoundID   soundID;
 -(void)setReminingCycle:(NSInteger)reminingCycle
 {
     _reminingCycle = reminingCycle;
-    if (!totalCycleString) {
+    if (self.firstTime) {
         totalCycleString = [self.timer.cycle integerValue];
+        self.firstTime = false;
     }
     self.reminingCycleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)reminingCycle,(long)totalCycleString];
     
@@ -149,6 +151,7 @@ SystemSoundID   soundID;
 
 -(void)setupTimer
 {
+    self.firstTime = true;
     totalTime = [self.timer.getTotal intValue];
     self.totoalReminingTime = totalTime;
     if ([self.timer.warmUpLength intValue] == 0) {

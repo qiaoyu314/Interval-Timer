@@ -9,6 +9,7 @@
 #import "YQAppDelegate.h"
 #import "YQTimerListViewController.h"
 #import "Timer.h"
+#import <fittingTimer-Swift.h>
 
 @interface YQAppDelegate ()
 
@@ -23,10 +24,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //load timers from db
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    YQNewNavigationController *navigationController = (YQNewNavigationController *)self.window.rootViewController;
+    navigationController.managedObjectContext = self.managedObjectContext;
     YQTimerListViewController *controller = (YQTimerListViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
-    
     
     return YES;
 }
