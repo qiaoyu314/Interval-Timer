@@ -42,12 +42,16 @@ NSInteger totalCycleString;
 CFURLRef *soundURL;
 SystemSoundID   soundID;
 
+
+
+#pragma mark - setter
+
 -(void)setCurrentReminingTime:(int)currentReminingTime
 {
     _currentReminingTime = currentReminingTime;
     if (_currentReminingTime < 4) {
         self.timerView.backgroundColor = [UIColor redColor];
-
+        
     }else{
         self.timerView.backgroundColor = [UIColor blackColor];
     }
@@ -55,7 +59,6 @@ SystemSoundID   soundID;
     
 }
 
-#pragma mark - setter
 -(void)setTotoalReminingTime:(int)totoalReminingTime
 {
     _totoalReminingTime = totoalReminingTime;
@@ -84,15 +87,10 @@ SystemSoundID   soundID;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
     //set button shape and color
     [self setUpButtons];
     //set up timer
     [self setupTimer];
-    
-    
-    
     
 }
 
@@ -131,13 +129,17 @@ SystemSoundID   soundID;
     if (reminingTime == 0) {
         //cancel the timer;
         [self.countDowntTimer invalidate];
-        //play sound
-        AudioServicesPlaySystemSound(1005);
+        
         //start next stage
         self.currentState = [self goToNextState];
         if (self.currentState != TIMER_END) {
             self.countDowntTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+            
+            //play sound
+            AudioServicesPlaySystemSound(1005);
         }else{
+            //use a different sound when timer ends
+            AudioServicesPlaySystemSound(1010);
             //timer ends
             //dispaly
             [[UIApplication sharedApplication ] setIdleTimerDisabled:NO] ;

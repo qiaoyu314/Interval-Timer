@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wnQ-VN-HuL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wnQ-VN-HuL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -97,7 +97,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9N-Be-xDg">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9N-Be-xDg" customClass="YQButtonView" customModule="fittingTimer" customModuleProvider="target">
                                             <rect key="frame" x="257" y="204" width="22" height="22"/>
                                             <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,6 +119,7 @@
                                 <connections>
                                     <outlet property="downloadButton" destination="uTl-gu-BsM" id="Lva-Qw-2If"/>
                                     <outlet property="nameCell" destination="O2Q-kw-3l1" id="Pws-G5-Unj"/>
+                                    <outlet property="timerInfo" destination="k9N-Be-xDg" id="h7z-HD-Z9a"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -523,13 +524,14 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Am9-vX-agi">
-                                                    <rect key="frame" x="294" y="13" width="12" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Am9-vX-agi">
+                                                    <rect key="frame" x="239" y="13" width="67" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="67" id="WNm-Td-Nnz"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
-                                                        <action selector="endEditCycle:" destination="9wk-rZ-SWz" eventType="editingDidEnd" id="LRU-fx-J8M"/>
-                                                        <action selector="endEditCycle:" destination="9wk-rZ-SWz" eventType="editingDidEndOnExit" id="xQU-Tt-OaO"/>
                                                         <outlet property="delegate" destination="9wk-rZ-SWz" id="ycB-Wt-ksK"/>
                                                     </connections>
                                                 </textField>
@@ -571,12 +573,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiT-c2-1Ye">
-                                                    <rect key="frame" x="263" y="13" width="42" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiT-c2-1Ye">
+                                                    <rect key="frame" x="239" y="13" width="67" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="67" id="3XD-Qd-vMB"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                     <connections>
-                                                        <action selector="endEditName:" destination="9wk-rZ-SWz" eventType="editingDidEnd" id="e5Z-b3-X7A"/>
                                                         <outlet property="delegate" destination="9wk-rZ-SWz" id="D9w-sI-AIX"/>
                                                     </connections>
                                                 </textField>
@@ -587,8 +591,38 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="eiT-c2-1Ye" secondAttribute="trailing" constant="7" id="Msp-1i-Xc4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eiT-c2-1Ye" secondAttribute="trailing" constant="6" id="Msp-1i-Xc4"/>
                                                 <constraint firstAttribute="centerY" secondItem="eiT-c2-1Ye" secondAttribute="centerY" id="pcA-yQ-cvG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="ZMh-VZ-kY9">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="timeCell" id="vor-UV-iHM">
+                                        <rect key="frame" x="0.0" y="425" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vor-UV-iHM" id="Gjy-Ku-VXy">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS1-iK-ss7" userLabel="Share this timer">
+                                                    <rect key="frame" x="102" y="7" width="116" height="30"/>
+                                                    <state key="normal" title="Share This Timer">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="GEO-js-R9D" kind="push" identifier="share" id="4nB-RF-izq"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="tS1-iK-ss7" secondAttribute="centerX" id="BVR-I5-2gC"/>
+                                                <constraint firstAttribute="centerY" secondItem="tS1-iK-ss7" secondAttribute="centerY" constant="-0.5" id="z5s-DL-5Zz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -603,7 +637,7 @@
                     <navigationItem key="navigationItem" id="hxd-jj-Kpf">
                         <barButtonItem key="rightBarButtonItem" title="Start" style="done" id="rSH-I6-iMc">
                             <connections>
-                                <segue destination="Znu-JP-a3Q" kind="push" id="Sff-VP-97F"/>
+                                <segue destination="Znu-JP-a3Q" kind="push" identifier="countDown" id="Sff-VP-97F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -630,7 +664,7 @@
                     </items>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="1228" y="94"/>
+            <point key="canvasLocation" x="1228" y="92"/>
         </scene>
         <!--New Navigation Controller-->
         <scene sceneID="yDy-CU-NW3">
@@ -650,6 +684,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4T-PH-y2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133" y="95"/>
+        </scene>
+        <!--Share View Controller-->
+        <scene sceneID="ie3-xx-Bva">
+            <objects>
+                <viewController id="GEO-js-R9D" customClass="YQShareViewController" customModule="fittingTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IPW-sX-hD2"/>
+                        <viewControllerLayoutGuide type="bottom" id="fhY-iN-Z5T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zHd-lA-X8g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Description of the timer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7I-XR-MQn">
+                                <rect key="frame" x="16" y="72" width="288" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="aCB-oD-pgv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kGZ-z4-tOt">
+                                <rect key="frame" x="16" y="306" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zg3-CF-qT1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kGZ-z4-tOt" firstAttribute="leading" secondItem="zHd-lA-X8g" secondAttribute="leadingMargin" id="Llc-oN-QgA"/>
+                            <constraint firstItem="kGZ-z4-tOt" firstAttribute="top" secondItem="IPW-sX-hD2" secondAttribute="bottom" constant="242" id="NX7-ea-K6F"/>
+                            <constraint firstItem="N7I-XR-MQn" firstAttribute="leading" secondItem="zHd-lA-X8g" secondAttribute="leadingMargin" id="SpD-LY-76C"/>
+                            <constraint firstItem="N7I-XR-MQn" firstAttribute="trailing" secondItem="zHd-lA-X8g" secondAttribute="trailingMargin" id="Vkf-zX-RaF"/>
+                            <constraint firstItem="kGZ-z4-tOt" firstAttribute="trailing" secondItem="zHd-lA-X8g" secondAttribute="trailingMargin" id="dnq-Ha-rKA"/>
+                            <constraint firstItem="N7I-XR-MQn" firstAttribute="top" secondItem="IPW-sX-hD2" secondAttribute="bottom" constant="8" id="htE-fb-OP3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TQd-3s-1zW">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="wJr-HR-mbv">
+                            <connections>
+                                <action selector="shareTimer:" destination="GEO-js-R9D" id="zie-Uq-VWU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krj-3z-uTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213" y="790"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

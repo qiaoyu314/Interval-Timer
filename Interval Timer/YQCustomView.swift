@@ -11,9 +11,8 @@ import Foundation
 class YQCollectionCellView: UICollectionViewCell{
     
     @IBOutlet weak var nameCell: UILabel!
-    
-    
     @IBOutlet weak var downloadButton: YQButtonView!
+    @IBOutlet weak var timerInfo: YQButtonView!
 }
 
 class YQButtonView: UIButton {

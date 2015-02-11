@@ -8,6 +8,7 @@
 
 #import "YQEditTimerViewController.h"
 #import "YQCountDownViewController.h"
+#import <fittingTimer-Swift.h>
 
 #define PICKER_ROW 0
 #define WARM_UP_ROW 0
@@ -98,18 +99,23 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (section==0){
-        return self.showTimePicker?1:0;
-    }else{
-        return 7;
+    switch (section) {
+        case 0:
+            return self.showTimePicker?1:0;
+            break;
+        case 1:
+            return 7;
+            break;
+        default:
+            return 1;
+            break;
     }
-    
 }
 
 #pragma mark - Table view delegate
@@ -233,85 +239,61 @@
 
 #pragma mark - cycle cell
 
-- (IBAction)endEditCycle:(UITextField *)sender
+//Update the cycle based on the value in the cycle field.
+//This method will be called the view disppears.
+- (BOOL)updateCycle
 {
-    if ([sender.text intValue] < 1 || [sender.text intValue] > MAX_CYCLE) {
+    NSLog(@"%@", self.cycleTextField.text);
+    if ([self.cycleTextField.text intValue] < 1 || [self.cycleTextField.text intValue] > MAX_CYCLE) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Cycle Error" message:@"Cycle has be between 1 and 100." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        sender.text = @"1";
-        [sender becomeFirstResponder];
+        self.cycleTextField.text = @"1";
+        [self.cycleTextField becomeFirstResponder];
+        return false;
     }else{
-        self.timer.cycle = [NSNumber numberWithInt:[sender.text intValue]];
+        self.timer.cycle = [NSNumber numberWithInt:[self.cycleTextField.text intValue]];
         self.totalLabel.text = [Timer getLengthInString:[self.timer getTotal]];
+        return true;
     }
 }
 
 #pragma mark - name cell
-- (IBAction)endEditName:(UITextField *)sender
+- (BOOL)updateName
 {
-    self.timer.name = sender.text;
+    self.timer.name = self.nameTextField.text;
+    return true;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    //udpate the cycle
+    if([self updateCycle] && [self updateName]){
+        return true;
+    }
+    
+    return false;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [self.managedObjectContext save:NULL];
     UIViewController *destController = segue.destinationViewController;
-    if ([destController isKindOfClass:[YQCountDownViewController class]]) {
-        ((YQCountDownViewController *)destController).timer = self.timer;
+    if([segue.identifier  isEqualToString: @"countDown"]){
+        //udpate the cycle
+        if ([destController isKindOfClass:[YQCountDownViewController class]]) {
+            ((YQCountDownViewController *)destController).timer = self.timer;
+        }
+    }else if([segue.identifier isEqualToString:@"share"]){
+        if ([destController isKindOfClass:[YQShareViewController class]]) {
+            ((YQShareViewController *)destController).timer = self.timer;
+        }
     }
+    
     
 }
 
@@ -353,6 +335,7 @@
     }
     
 }
+
 
 
 @end

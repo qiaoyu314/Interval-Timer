@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91744992E66031DEBE924D2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EC796ACA5A3E99867D51DF /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A417F0D81867DFB000BE10CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A417F0D71867DFB000BE10CE /* Foundation.framework */; };
 		A417F0DA1867DFB000BE10CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A417F0D91867DFB000BE10CE /* CoreGraphics.framework */; };
 		A417F0DC1867DFB000BE10CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A417F0DB1867DFB000BE10CE /* UIKit.framework */; };
@@ -23,11 +24,13 @@
 		A417F10F1867E48F00BE10CE /* YQTimerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A417F10E1867E48F00BE10CE /* YQTimerListViewController.m */; };
 		A4358AE419FF368700B53682 /* YQCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4358AE319FF368700B53682 /* YQCollectionViewController.swift */; };
 		A44FBEBF186BDDB20056D270 /* YQEditTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44FBEBE186BDDB20056D270 /* YQEditTimerViewController.m */; };
+		A450E4F91A3D15870001773B /* YQShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450E4F81A3D15870001773B /* YQShareViewController.swift */; };
 		A47A09791888B08F00F743A8 /* YQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47A09781888B08F00F743A8 /* YQNavigationController.m */; };
 		A47C8531187E3E18008AB488 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A47C852F187E3E18008AB488 /* Model.xcdatamodeld */; };
 		A47C85461882439C008AB488 /* YQCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C85451882439C008AB488 /* YQCountDownViewController.m */; };
 		A47C854918825C65008AB488 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C854818825C65008AB488 /* Timer.m */; };
 		A47C854C18825DFB008AB488 /* Timer+TimerWithHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C854B18825DFB008AB488 /* Timer+TimerWithHelper.m */; };
+		A4D834031A7757440088A1E6 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D834021A7757440088A1E6 /* json.swift */; };
 		A4F1990919EF7B5600DD4BCE /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */; };
 		A4F1990A19EF7B5600DD4BCE /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990819EF7B5600DD4BCE /* ENSideMenuNavigationController.swift */; };
 		A4F1990D19EF81B900DD4BCE /* YQNewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990C19EF81B900DD4BCE /* YQNewNavigationController.swift */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03EC796ACA5A3E99867D51DF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E80DA3CB29CCB9552DD0FA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		872142260560E56EEC437529 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A417F0D41867DFB000BE10CE /* fittingTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fittingTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A417F0D71867DFB000BE10CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A417F0D91867DFB000BE10CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,6 +78,7 @@
 		A4358AE319FF368700B53682 /* YQCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQCollectionViewController.swift; sourceTree = "<group>"; };
 		A44FBEBD186BDDB20056D270 /* YQEditTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQEditTimerViewController.h; sourceTree = "<group>"; };
 		A44FBEBE186BDDB20056D270 /* YQEditTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQEditTimerViewController.m; sourceTree = "<group>"; };
+		A450E4F81A3D15870001773B /* YQShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQShareViewController.swift; sourceTree = "<group>"; };
 		A47A09771888B08F00F743A8 /* YQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNavigationController.h; sourceTree = "<group>"; };
 		A47A09781888B08F00F743A8 /* YQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNavigationController.m; sourceTree = "<group>"; };
 		A47C8530187E3E18008AB488 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 		A47C854818825C65008AB488 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		A47C854A18825DFB008AB488 /* Timer+TimerWithHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Timer+TimerWithHelper.h"; sourceTree = "<group>"; };
 		A47C854B18825DFB008AB488 /* Timer+TimerWithHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Timer+TimerWithHelper.m"; sourceTree = "<group>"; };
+		A4D834021A7757440088A1E6 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		A4F1990619EF7B5600DD4BCE /* Interval Timer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Interval Timer-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		A4F1990819EF7B5600DD4BCE /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 				A417F0DA1867DFB000BE10CE /* CoreGraphics.framework in Frameworks */,
 				A417F0DC1867DFB000BE10CE /* UIKit.framework in Frameworks */,
 				A417F0D81867DFB000BE10CE /* Foundation.framework in Frameworks */,
+				91744992E66031DEBE924D2E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E4E029FEC9DB31086031BD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63E80DA3CB29CCB9552DD0FA /* Pods.debug.xcconfig */,
+				872142260560E56EEC437529 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A417F0CB1867DFB000BE10CE = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +142,7 @@
 				A417F0F61867DFB000BE10CE /* Interval TimerTests */,
 				A417F0D61867DFB000BE10CE /* Frameworks */,
 				A417F0D51867DFB000BE10CE /* Products */,
+				2E4E029FEC9DB31086031BD6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +162,7 @@
 				A417F0D91867DFB000BE10CE /* CoreGraphics.framework */,
 				A417F0DB1867DFB000BE10CE /* UIKit.framework */,
 				A417F0F01867DFB000BE10CE /* XCTest.framework */,
+				03EC796ACA5A3E99867D51DF /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,6 +235,7 @@
 				A4F1990C19EF81B900DD4BCE /* YQNewNavigationController.swift */,
 				A4358AE319FF368700B53682 /* YQCollectionViewController.swift */,
 				A4F1990E19EF83E900DD4BCE /* YQSideMenu.swift */,
+				A450E4F81A3D15870001773B /* YQShareViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -240,6 +261,7 @@
 				A4F1F05D1A08762D004F5716 /* HTTPTask.swift */,
 				A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */,
 				A4F1990819EF7B5600DD4BCE /* ENSideMenuNavigationController.swift */,
+				A4D834021A7757440088A1E6 /* json.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -251,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A417F1001867DFB000BE10CE /* Build configuration list for PBXNativeTarget "Interval Timer" */;
 			buildPhases = (
+				05795DD9172A054737EB6262 /* Check Pods Manifest.lock */,
 				A417F0D01867DFB000BE10CE /* Sources */,
 				A417F0D11867DFB000BE10CE /* Frameworks */,
 				A417F0D21867DFB000BE10CE /* Resources */,
+				02A1676DFA0F27E934B79A69 /* Embed Pods Frameworks */,
+				3E762B5A1059A6434A18316B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,6 +364,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02A1676DFA0F27E934B79A69 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		05795DD9172A054737EB6262 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3E762B5A1059A6434A18316B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A417F0D01867DFB000BE10CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -346,6 +419,7 @@
 			files = (
 				A4F1F0661A0899F5004F5716 /* YQCustomView.swift in Sources */,
 				A47C85461882439C008AB488 /* YQCountDownViewController.m in Sources */,
+				A450E4F91A3D15870001773B /* YQShareViewController.swift in Sources */,
 				A47A09791888B08F00F743A8 /* YQNavigationController.m in Sources */,
 				A4F1990919EF7B5600DD4BCE /* ENSideMenu.swift in Sources */,
 				A4F1F0641A087646004F5716 /* HTTPUpload.swift in Sources */,
@@ -360,6 +434,7 @@
 				A417F0E41867DFB000BE10CE /* main.m in Sources */,
 				A4F1F05E1A08762D004F5716 /* HTTPTask.swift in Sources */,
 				A4F1F0631A087646004F5716 /* HTTPResponseSerializer.swift in Sources */,
+				A4D834031A7757440088A1E6 /* json.swift in Sources */,
 				A4F1990D19EF81B900DD4BCE /* YQNewNavigationController.swift in Sources */,
 				A4F1990A19EF7B5600DD4BCE /* ENSideMenuNavigationController.swift in Sources */,
 				A47C854918825C65008AB488 /* Timer.m in Sources */,
@@ -406,6 +481,7 @@
 /* Begin XCBuildConfiguration section */
 		A417F0FE1867DFB000BE10CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63E80DA3CB29CCB9552DD0FA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -444,6 +520,7 @@
 		};
 		A417F0FF1867DFB000BE10CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 872142260560E56EEC437529 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -477,6 +554,7 @@
 		};
 		A417F1011867DFB000BE10CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63E80DA3CB29CCB9552DD0FA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-new";
@@ -501,6 +579,7 @@
 		};
 		A417F1021867DFB000BE10CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 872142260560E56EEC437529 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-new";

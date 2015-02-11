@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Yu Qiao. All rights reserved.
 //
 
-import UIkit
-
+import Alamofire
 
 class YQCollectionViewController: UICollectionViewController{
     
@@ -15,7 +14,6 @@ class YQCollectionViewController: UICollectionViewController{
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-    var timerJosn: Array<AnyObject> = []
     var fromIndex: Int = 0  //the starting index of the timers for next loading
     
     required init(coder aDecoder: NSCoder) {
@@ -28,7 +26,7 @@ class YQCollectionViewController: UICollectionViewController{
     
     //how many cells in a section
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return timerJosn.count;
+        return timerList.count;
     }
     
     //which cell?
@@ -36,12 +34,9 @@ class YQCollectionViewController: UICollectionViewController{
         
         var cell: YQCollectionCellView = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as YQCollectionCellView;
         var timerInfo = timerList[indexPath.row].name
-        //        timerInfo += "Round Timer: " + String(timerList[indexPath.row].roundLength) + "\n"
-        //        timerInfo += "Rest Time: " + String(timerList[indexPath.row].restLength) + "\n"
-        //        timerInfo += "Creation Time: " + timerList[indexPath.row].creationTime
-        
         cell.nameCell.text = timerInfo
         cell.downloadButton.indexPath = indexPath
+        cell.timerInfo.indexPath = indexPath
         return cell;
     }
     
@@ -54,7 +49,7 @@ class YQCollectionViewController: UICollectionViewController{
     @IBAction func downloadTimer(sender: YQButtonView) {
         var indexPath:NSIndexPath? = sender.indexPath
         
-        if((indexPath) != nil){
+        if(indexPath != nil){
             println(indexPath?.row)
         }
     }
@@ -70,9 +65,13 @@ class YQCollectionViewController: UICollectionViewController{
     }
     
     
-    @IBAction func showDetail(sender: UIButton) {
-        let descripition = "Test"
-        let alertController = UIAlertController(title: "Description", message: descripition, preferredStyle: .Alert)
+    @IBAction func showDetail(sender: YQButtonView) {
+        var indexPath:NSIndexPath? = sender.indexPath
+        var description: String = ""
+        if(indexPath != nil){
+            description = self.timerList[(indexPath?.row)!].description
+        }
+        let alertController = UIAlertController(title: "Description", message: description, preferredStyle: .Alert)
         let OKaction = UIAlertAction(title: "OK", style: .Default){(action) in
         
         }
@@ -87,25 +86,14 @@ class YQCollectionViewController: UICollectionViewController{
             self.fromIndex = 0
         }
         indicator.startAnimating()
-        
-        var URL = "http://0.0.0.0:8000/timers"
-        var request = HTTPTask()
-        request.responseSerializer = JSONResponseSerializer()
-        request.GET(URL, parameters: nil, success: {(response: HTTPResponse) in
-            if response.responseObject != nil{
-                self.timerJosn = response.responseObject as Array<AnyObject>
-                var timer: timerForDisplay
-                var tD: Dictionary<String, AnyObject>
-                for t in self.timerJosn{
-                    tD = t as Dictionary<String, AnyObject>
-                    timer = timerForDisplay()
-                    timer.name = tD["name"] as String
-                    timer.roundLength = tD["roundLength"] as Int
-                    timer.restLength = tD["restLength"] as Int
-                    timer.coolDownLength = tD["cooldownLength"] as Int
-                    timer.warmUpLength = tD["warmUpLength"] as Int
-                    timer.cycle = tD["cycle"] as Int
-                    timer.creationTime = tD["creationTime"] as String
+    
+        let URL = "http://0.0.0.0:8000/timers"
+        Alamofire.request(.GET, URL)
+            .responseJSON { (_, _, data:AnyObject?, _) in
+                let data = JSON(data!)
+                for(index, value) in data["timers"]{
+                    var timer = timerForDisplay()
+                    timer.name = value["name"].asString!
                     
                     self.timerList.append(timer)
                 }
@@ -114,18 +102,12 @@ class YQCollectionViewController: UICollectionViewController{
                 dispatch_async(dispatch_get_main_queue(), {
                     self.indicator.stopAnimating()
                     self.indicator.hidden = true
-                    self.collectionView.reloadData()
+                    self.collectionView?.reloadData()
                 });
-                
-                
-            }
-            }, failure: {(error: NSError, response: HTTPResponse?) in
-                //handle error
-        })
-        
+        }
     }
 }
-
+//
 class timerForDisplay{
     var name: String = ""
     var warmUpLength: Int = 0
@@ -133,7 +115,7 @@ class timerForDisplay{
     var restLength: Int = 0
     var cycle: Int = 0
     var coolDownLength: Int = 0
-    var creationTime: String = ""
-    
+    var creationTime: NSDate?
+    var description: String = ""
 }
 
