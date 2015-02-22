@@ -17,7 +17,6 @@ int main(int argc, char * argv[])
             return UIApplicationMain(argc, argv, nil, NSStringFromClass([YQAppDelegate class]));
         }
         @catch (NSException *exception) {
-            //NSLog([exception description]);
         }
         
     }

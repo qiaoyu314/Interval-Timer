@@ -331,6 +331,7 @@ SystemSoundID   soundID;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self cancleTimer];
 }
 

@@ -84,7 +84,7 @@ class YQSideMenu:UITableViewController{
         
         //Present new view controller
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Storyboard",bundle: nil)
-        var destViewController : UIViewController
+        var destViewController : UIViewController?
         switch (indexPath.row) {
         case 0:
             
@@ -92,12 +92,17 @@ class YQSideMenu:UITableViewController{
             timerListController.managedObjectContext = self.managedObjectContext
             destViewController = timerListController
             break
-        default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("downloadTimer") as UIViewController
+        case 1:
+            let downloadTimerController = mainStoryboard.instantiateViewControllerWithIdentifier("downloadTimer") as YQCollectionViewController
+            downloadTimerController.managedObjectContext = self.managedObjectContext
+            destViewController = downloadTimerController
             break
+        default:
+            break;
         }
-        //set managedObjectContext
-        sideMenuController()?.setContentViewController(destViewController)
+        if destViewController != nil{
+            sideMenuController()?.setContentViewController(destViewController!)
+        }
     }
 
 }

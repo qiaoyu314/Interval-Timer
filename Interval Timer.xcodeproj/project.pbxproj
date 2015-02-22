@@ -30,15 +30,12 @@
 		A47C85461882439C008AB488 /* YQCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C85451882439C008AB488 /* YQCountDownViewController.m */; };
 		A47C854918825C65008AB488 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C854818825C65008AB488 /* Timer.m */; };
 		A47C854C18825DFB008AB488 /* Timer+TimerWithHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C854B18825DFB008AB488 /* Timer+TimerWithHelper.m */; };
+		A480FA071A92EA72006B1086 /* YQNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480FA061A92EA72006B1086 /* YQNetwork.swift */; };
 		A4D834031A7757440088A1E6 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D834021A7757440088A1E6 /* json.swift */; };
 		A4F1990919EF7B5600DD4BCE /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */; };
 		A4F1990A19EF7B5600DD4BCE /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990819EF7B5600DD4BCE /* ENSideMenuNavigationController.swift */; };
 		A4F1990D19EF81B900DD4BCE /* YQNewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990C19EF81B900DD4BCE /* YQNewNavigationController.swift */; };
 		A4F1990F19EF83E900DD4BCE /* YQSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990E19EF83E900DD4BCE /* YQSideMenu.swift */; };
-		A4F1F05E1A08762D004F5716 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1F05D1A08762D004F5716 /* HTTPTask.swift */; };
-		A4F1F0621A087646004F5716 /* HTTPRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1F05F1A087646004F5716 /* HTTPRequestSerializer.swift */; };
-		A4F1F0631A087646004F5716 /* HTTPResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1F0601A087646004F5716 /* HTTPResponseSerializer.swift */; };
-		A4F1F0641A087646004F5716 /* HTTPUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1F0611A087646004F5716 /* HTTPUpload.swift */; };
 		A4F1F0661A0899F5004F5716 /* YQCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1F0651A0899F5004F5716 /* YQCustomView.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,16 +85,13 @@
 		A47C854818825C65008AB488 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		A47C854A18825DFB008AB488 /* Timer+TimerWithHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Timer+TimerWithHelper.h"; sourceTree = "<group>"; };
 		A47C854B18825DFB008AB488 /* Timer+TimerWithHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Timer+TimerWithHelper.m"; sourceTree = "<group>"; };
+		A480FA061A92EA72006B1086 /* YQNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQNetwork.swift; sourceTree = "<group>"; };
 		A4D834021A7757440088A1E6 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		A4F1990619EF7B5600DD4BCE /* Interval Timer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Interval Timer-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		A4F1990819EF7B5600DD4BCE /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		A4F1990C19EF81B900DD4BCE /* YQNewNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQNewNavigationController.swift; sourceTree = "<group>"; };
 		A4F1990E19EF83E900DD4BCE /* YQSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQSideMenu.swift; sourceTree = "<group>"; };
-		A4F1F05D1A08762D004F5716 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPTask.swift; path = ../../SwiftHTTP/HTTPTask.swift; sourceTree = "<group>"; };
-		A4F1F05F1A087646004F5716 /* HTTPRequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPRequestSerializer.swift; path = ../../SwiftHTTP/HTTPRequestSerializer.swift; sourceTree = "<group>"; };
-		A4F1F0601A087646004F5716 /* HTTPResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPResponseSerializer.swift; path = ../../SwiftHTTP/HTTPResponseSerializer.swift; sourceTree = "<group>"; };
-		A4F1F0611A087646004F5716 /* HTTPUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPUpload.swift; path = ../../SwiftHTTP/HTTPUpload.swift; sourceTree = "<group>"; };
 		A4F1F0651A0899F5004F5716 /* YQCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQCustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +230,7 @@
 				A4358AE319FF368700B53682 /* YQCollectionViewController.swift */,
 				A4F1990E19EF83E900DD4BCE /* YQSideMenu.swift */,
 				A450E4F81A3D15870001773B /* YQShareViewController.swift */,
+				A480FA061A92EA72006B1086 /* YQNetwork.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -255,10 +250,6 @@
 		A4F1990B19EF7B5E00DD4BCE /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				A4F1F05F1A087646004F5716 /* HTTPRequestSerializer.swift */,
-				A4F1F0601A087646004F5716 /* HTTPResponseSerializer.swift */,
-				A4F1F0611A087646004F5716 /* HTTPUpload.swift */,
-				A4F1F05D1A08762D004F5716 /* HTTPTask.swift */,
 				A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */,
 				A4F1990819EF7B5600DD4BCE /* ENSideMenuNavigationController.swift */,
 				A4D834021A7757440088A1E6 /* json.swift */,
@@ -422,18 +413,15 @@
 				A450E4F91A3D15870001773B /* YQShareViewController.swift in Sources */,
 				A47A09791888B08F00F743A8 /* YQNavigationController.m in Sources */,
 				A4F1990919EF7B5600DD4BCE /* ENSideMenu.swift in Sources */,
-				A4F1F0641A087646004F5716 /* HTTPUpload.swift in Sources */,
 				A4F1990F19EF83E900DD4BCE /* YQSideMenu.swift in Sources */,
-				A4F1F0621A087646004F5716 /* HTTPRequestSerializer.swift in Sources */,
 				A44FBEBF186BDDB20056D270 /* YQEditTimerViewController.m in Sources */,
 				A417F10F1867E48F00BE10CE /* YQTimerListViewController.m in Sources */,
 				A47C854C18825DFB008AB488 /* Timer+TimerWithHelper.m in Sources */,
 				A47C8531187E3E18008AB488 /* Model.xcdatamodeld in Sources */,
 				A4358AE419FF368700B53682 /* YQCollectionViewController.swift in Sources */,
 				A417F0E81867DFB000BE10CE /* YQAppDelegate.m in Sources */,
+				A480FA071A92EA72006B1086 /* YQNetwork.swift in Sources */,
 				A417F0E41867DFB000BE10CE /* main.m in Sources */,
-				A4F1F05E1A08762D004F5716 /* HTTPTask.swift in Sources */,
-				A4F1F0631A087646004F5716 /* HTTPResponseSerializer.swift in Sources */,
 				A4D834031A7757440088A1E6 /* json.swift in Sources */,
 				A4F1990D19EF81B900DD4BCE /* YQNewNavigationController.swift in Sources */,
 				A4F1990A19EF7B5600DD4BCE /* ENSideMenuNavigationController.swift in Sources */,

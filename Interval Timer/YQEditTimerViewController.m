@@ -33,6 +33,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentEditingLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cycleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *standardDetailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cycleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *standardTitleLabel;
 @property NSMutableArray *timePickDataArray;   //contains 3 arrays.
 @property (nonatomic) BOOL showTimePicker;
 
@@ -92,6 +96,33 @@
     selectedRow = -1;
     self.showTimePicker = NO;
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self autoAlign];
+}
+
+-(void)viewdidDisappear{
+    [self.managedObjectContext save:NULL];
+}
+
+-(void)autoAlign{
+    NSLayoutConstraint  *cycleLableleadingSpaceConstrain = [NSLayoutConstraint constraintWithItem:self.cycleLabel attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.standardTitleLabel attribute:NSLayoutAttributeLeftMargin multiplier:1 constant:0];
+    NSLayoutConstraint  *cycFieldleadingSpaceConstrain = [NSLayoutConstraint constraintWithItem:self.cycleTextField attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.standardDetailLabel attribute:NSLayoutAttributeLeftMargin multiplier:1 constant:0];
+    NSLayoutConstraint  *nameLableleadingSpaceConstrain = [NSLayoutConstraint constraintWithItem:self.nameLabel attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.standardTitleLabel attribute:NSLayoutAttributeLeftMargin multiplier:1 constant:0];
+    NSLayoutConstraint  *nameFieldleadingSpaceConstrain = [NSLayoutConstraint constraintWithItem:self.nameTextField attribute:NSLayoutAttributeLeadingMargin relatedBy:NSLayoutRelationEqual toItem:self.standardDetailLabel attribute:NSLayoutAttributeLeftMargin multiplier:1 constant:0];
+    
+    NSLayoutConstraint  *cycleFieldWidthConstrain = [NSLayoutConstraint constraintWithItem:self.cycleTextField attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.standardDetailLabel attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+    
+    NSLayoutConstraint  *nameFieldWidthConstrain = [NSLayoutConstraint constraintWithItem:self.nameTextField attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.standardDetailLabel attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+    
+    [self.view addConstraint: cycleLableleadingSpaceConstrain];
+    [self.view addConstraint: cycFieldleadingSpaceConstrain];
+    [self.view addConstraint: nameLableleadingSpaceConstrain];
+    [self.view addConstraint: nameFieldleadingSpaceConstrain];
+    [self.view addConstraint: cycleFieldWidthConstrain];
+    [self.view addConstraint: nameFieldWidthConstrain];
 }
 
 #pragma mark - Table view data source
@@ -243,7 +274,6 @@
 //This method will be called the view disppears.
 - (BOOL)updateCycle
 {
-    NSLog(@"%@", self.cycleTextField.text);
     if ([self.cycleTextField.text intValue] < 1 || [self.cycleTextField.text intValue] > MAX_CYCLE) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Cycle Error" message:@"Cycle has be between 1 and 100." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
@@ -281,7 +311,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [self.managedObjectContext save:NULL];
     UIViewController *destController = segue.destinationViewController;
     if([segue.identifier  isEqualToString: @"countDown"]){
         //udpate the cycle
@@ -303,9 +332,9 @@
 //update the time picker to match the selected table row
 - (void) udpateTimePicker:(NSInteger)row
 {
-    NSInteger hourRow;
-    NSInteger minuteRow;
-    NSInteger secondRow;
+    NSInteger hourRow = 0;
+    NSInteger minuteRow = 0;
+    NSInteger secondRow = 0;
     if (row == 0) {
         //warm up
         hourRow = [[Timer getHours:self.timer.warmUpLength] integerValue];
