@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A417F0D31867DFB000BE10CE"
-               BuildableName = "fittingTimer.app"
+               BuildableName = "Interval-Timer.app"
                BlueprintName = "Interval Timer"
                ReferencedContainer = "container:Interval Timer.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A417F0D31867DFB000BE10CE"
-            BuildableName = "fittingTimer.app"
+            BuildableName = "Interval-Timer.app"
             BlueprintName = "Interval Timer"
             ReferencedContainer = "container:Interval Timer.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A417F0D31867DFB000BE10CE"
-            BuildableName = "fittingTimer.app"
+            BuildableName = "Interval-Timer.app"
             BlueprintName = "Interval Timer"
             ReferencedContainer = "container:Interval Timer.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A417F0D31867DFB000BE10CE"
-            BuildableName = "fittingTimer.app"
+            BuildableName = "Interval-Timer.app"
             BlueprintName = "Interval Timer"
             ReferencedContainer = "container:Interval Timer.xcodeproj">
          </BuildableReference>

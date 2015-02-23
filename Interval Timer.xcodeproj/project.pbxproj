@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		91744992E66031DEBE924D2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EC796ACA5A3E99867D51DF /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A417F0D81867DFB000BE10CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A417F0D71867DFB000BE10CE /* Foundation.framework */; };
 		A417F0DA1867DFB000BE10CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A417F0D91867DFB000BE10CE /* CoreGraphics.framework */; };
 		A417F0DC1867DFB000BE10CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A417F0DB1867DFB000BE10CE /* UIKit.framework */; };
@@ -31,6 +30,7 @@
 		A47C854918825C65008AB488 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C854818825C65008AB488 /* Timer.m */; };
 		A47C854C18825DFB008AB488 /* Timer+TimerWithHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C854B18825DFB008AB488 /* Timer+TimerWithHelper.m */; };
 		A480FA071A92EA72006B1086 /* YQNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480FA061A92EA72006B1086 /* YQNetwork.swift */; };
+		A490F8B91A9AEBC300FA6DAD /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A490F8B81A9AEBC300FA6DAD /* Alamofire.swift */; };
 		A4D834031A7757440088A1E6 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D834021A7757440088A1E6 /* json.swift */; };
 		A4F1990919EF7B5600DD4BCE /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */; };
 		A4F1990A19EF7B5600DD4BCE /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F1990819EF7B5600DD4BCE /* ENSideMenuNavigationController.swift */; };
@@ -50,10 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03EC796ACA5A3E99867D51DF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E80DA3CB29CCB9552DD0FA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		872142260560E56EEC437529 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A417F0D41867DFB000BE10CE /* fittingTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fittingTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A417F0D41867DFB000BE10CE /* Interval-Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval-Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A417F0D71867DFB000BE10CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A417F0D91867DFB000BE10CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A417F0DB1867DFB000BE10CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -86,6 +83,7 @@
 		A47C854A18825DFB008AB488 /* Timer+TimerWithHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Timer+TimerWithHelper.h"; sourceTree = "<group>"; };
 		A47C854B18825DFB008AB488 /* Timer+TimerWithHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Timer+TimerWithHelper.m"; sourceTree = "<group>"; };
 		A480FA061A92EA72006B1086 /* YQNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQNetwork.swift; sourceTree = "<group>"; };
+		A490F8B81A9AEBC300FA6DAD /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		A4D834021A7757440088A1E6 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		A4F1990619EF7B5600DD4BCE /* Interval Timer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Interval Timer-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				A417F0DA1867DFB000BE10CE /* CoreGraphics.framework in Frameworks */,
 				A417F0DC1867DFB000BE10CE /* UIKit.framework in Frameworks */,
 				A417F0D81867DFB000BE10CE /* Foundation.framework in Frameworks */,
-				91744992E66031DEBE924D2E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,30 +117,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E4E029FEC9DB31086031BD6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				63E80DA3CB29CCB9552DD0FA /* Pods.debug.xcconfig */,
-				872142260560E56EEC437529 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A417F0CB1867DFB000BE10CE = {
 			isa = PBXGroup;
 			children = (
-				A417F0DD1867DFB000BE10CE /* Interval Timer */,
-				A417F0F61867DFB000BE10CE /* Interval TimerTests */,
+				A417F0DD1867DFB000BE10CE /* Interval-Timer */,
+				A417F0F61867DFB000BE10CE /* Interval-TimerTests */,
 				A417F0D61867DFB000BE10CE /* Frameworks */,
 				A417F0D51867DFB000BE10CE /* Products */,
-				2E4E029FEC9DB31086031BD6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		A417F0D51867DFB000BE10CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A417F0D41867DFB000BE10CE /* fittingTimer.app */,
+				A417F0D41867DFB000BE10CE /* Interval-Timer.app */,
 				A417F0EF1867DFB000BE10CE /* Interval TimerTests.xctest */,
 			);
 			name = Products;
@@ -156,12 +143,11 @@
 				A417F0D91867DFB000BE10CE /* CoreGraphics.framework */,
 				A417F0DB1867DFB000BE10CE /* UIKit.framework */,
 				A417F0F01867DFB000BE10CE /* XCTest.framework */,
-				03EC796ACA5A3E99867D51DF /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A417F0DD1867DFB000BE10CE /* Interval Timer */ = {
+		A417F0DD1867DFB000BE10CE /* Interval-Timer */ = {
 			isa = PBXGroup;
 			children = (
 				A4F1990B19EF7B5E00DD4BCE /* Library */,
@@ -174,7 +160,7 @@
 				A417F10B1867E44500BE10CE /* View */,
 				A4F1990619EF7B5600DD4BCE /* Interval Timer-Bridging-Header.h */,
 			);
-			path = "Interval Timer";
+			path = "Interval-Timer";
 			sourceTree = "<group>";
 		};
 		A417F0DE1867DFB000BE10CE /* Supporting Files */ = {
@@ -188,13 +174,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A417F0F61867DFB000BE10CE /* Interval TimerTests */ = {
+		A417F0F61867DFB000BE10CE /* Interval-TimerTests */ = {
 			isa = PBXGroup;
 			children = (
 				A417F0FC1867DFB000BE10CE /* Interval_TimerTests.m */,
 				A417F0F71867DFB000BE10CE /* Supporting Files */,
 			);
-			path = "Interval TimerTests";
+			path = "Interval-TimerTests";
 			sourceTree = "<group>";
 		};
 		A417F0F71867DFB000BE10CE /* Supporting Files */ = {
@@ -251,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F1990719EF7B5600DD4BCE /* ENSideMenu.swift */,
+				A490F8B81A9AEBC300FA6DAD /* Alamofire.swift */,
 				A4F1990819EF7B5600DD4BCE /* ENSideMenuNavigationController.swift */,
 				A4D834021A7757440088A1E6 /* json.swift */,
 			);
@@ -264,12 +251,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A417F1001867DFB000BE10CE /* Build configuration list for PBXNativeTarget "Interval Timer" */;
 			buildPhases = (
-				05795DD9172A054737EB6262 /* Check Pods Manifest.lock */,
 				A417F0D01867DFB000BE10CE /* Sources */,
 				A417F0D11867DFB000BE10CE /* Frameworks */,
 				A417F0D21867DFB000BE10CE /* Resources */,
-				02A1676DFA0F27E934B79A69 /* Embed Pods Frameworks */,
-				3E762B5A1059A6434A18316B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,7 +261,7 @@
 			);
 			name = "Interval Timer";
 			productName = "Interval Timer";
-			productReference = A417F0D41867DFB000BE10CE /* fittingTimer.app */;
+			productReference = A417F0D41867DFB000BE10CE /* Interval-Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A417F0EE1867DFB000BE10CE /* Interval TimerTests */ = {
@@ -355,54 +339,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		02A1676DFA0F27E934B79A69 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		05795DD9172A054737EB6262 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3E762B5A1059A6434A18316B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		A417F0D01867DFB000BE10CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -416,6 +352,7 @@
 				A4F1990F19EF83E900DD4BCE /* YQSideMenu.swift in Sources */,
 				A44FBEBF186BDDB20056D270 /* YQEditTimerViewController.m in Sources */,
 				A417F10F1867E48F00BE10CE /* YQTimerListViewController.m in Sources */,
+				A490F8B91A9AEBC300FA6DAD /* Alamofire.swift in Sources */,
 				A47C854C18825DFB008AB488 /* Timer+TimerWithHelper.m in Sources */,
 				A47C8531187E3E18008AB488 /* Model.xcdatamodeld in Sources */,
 				A4358AE419FF368700B53682 /* YQCollectionViewController.swift in Sources */,
@@ -469,7 +406,6 @@
 /* Begin XCBuildConfiguration section */
 		A417F0FE1867DFB000BE10CE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63E80DA3CB29CCB9552DD0FA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -508,7 +444,6 @@
 		};
 		A417F0FF1867DFB000BE10CE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 872142260560E56EEC437529 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -542,7 +477,6 @@
 		};
 		A417F1011867DFB000BE10CE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63E80DA3CB29CCB9552DD0FA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-new";
@@ -551,15 +485,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Interval Timer/Interval Timer-Prefix.pch";
-				INFOPLIST_FILE = "Interval Timer/Interval Timer-Info.plist";
+				GCC_PREFIX_HEADER = "Interval-Timer/Interval Timer-Prefix.pch";
+				INFOPLIST_FILE = "Interval-Timer/Interval Timer-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = fittingTimer;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "Interval-Timer";
+				PROVISIONING_PROFILE = "bddf6960-31d7-433a-aace-4494498f1400";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Interval Timer/Interval Timer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Interval-Timer/Interval Timer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
@@ -567,7 +501,6 @@
 		};
 		A417F1021867DFB000BE10CE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 872142260560E56EEC437529 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-new";
@@ -576,15 +509,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Interval Timer/Interval Timer-Prefix.pch";
-				INFOPLIST_FILE = "Interval Timer/Interval Timer-Info.plist";
+				GCC_PREFIX_HEADER = "Interval-Timer/Interval Timer-Prefix.pch";
+				INFOPLIST_FILE = "Interval-Timer/Interval Timer-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = fittingTimer;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "Interval-Timer";
+				PROVISIONING_PROFILE = "bddf6960-31d7-433a-aace-4494498f1400";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Interval Timer/Interval Timer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Interval-Timer/Interval Timer-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

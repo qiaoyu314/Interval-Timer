@@ -12,6 +12,8 @@
 	<dict>
 		<key>38D9009B322140394B9DA7467F68950B56B35FF5</key>
 		<string>https://github.com/daltoniam/SwiftHTTP.git</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>https://github.com/Alamofire/Alamofire.git</string>
 		<key>AA37E835F1E6EDDD6CF9A7BAFE53C3BB84C548BD</key>
 		<string>https://github.com/qiaoyu314/Interval-Timer.git</string>
 		<key>DA41B5D9-42D2-4EC3-BB17-FAFFD87F2463</key>
@@ -23,6 +25,8 @@
 	<dict>
 		<key>38D9009B322140394B9DA7467F68950B56B35FF5</key>
 		<string>../../../SwiftHTTP</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>../../Alamofire/</string>
 		<key>AA37E835F1E6EDDD6CF9A7BAFE53C3BB84C548BD</key>
 		<string>../..</string>
 		<key>DA41B5D9-42D2-4EC3-BB17-FAFFD87F2463</key>
@@ -36,6 +40,14 @@
 	<string>AA37E835F1E6EDDD6CF9A7BAFE53C3BB84C548BD</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Alamofire</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
