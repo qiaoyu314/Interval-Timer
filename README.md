@@ -8,6 +8,8 @@ A timer has several phases: warm up, round, rest, cooldown. You can specify how 
 
 If you are lasy, you can down down some templates from server. Or you can share your timer with everyone else!
 
+**Please give it a shot and write tickets if you find any issue.**
+
 ####Screenshot
 <img style="float: left" src="https://is2-ssl.mzstatic.com/image/thumb/Purple3/v4/f5/e7/a8/f5e7a814-2dea-b562-bb16-8302472a8538/pr_source.png/500x500bb-80.png"/>
 
