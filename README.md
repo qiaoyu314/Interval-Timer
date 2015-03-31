@@ -8,7 +8,7 @@ A timer has several phases: warm up, round, rest, cooldown. You can specify how 
 
 If you are lasy, you can down down some templates from server. Or you can share your timer with everyone else!
 
-**Please give it a shot and write tickets if you find any issue.**
+*Please give it a shot and write tickets if you find any issue.*
 
 ####iOS Technologies Used in This App
 - UITableView
