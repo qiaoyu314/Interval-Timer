@@ -2,7 +2,7 @@ Interval-Timer
 ==============
 ####Description
 
-My first iOS app. It is easy to create customized timer for workout. 
+My first iOS app. It is easy to create customized timer for workout. Download from [App Store](https://itunes.apple.com/us/app/fitting-timer/id841187427?mt=8).
 
 A timer has several phases: warm up, round, rest, cooldown. You can specify how long each period is and many times round and rest repeat.
 
